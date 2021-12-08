@@ -1,0 +1,74 @@
+version: "2.0"
+
+intents:
+ - greet
+ - thank
+ - bye
+ - ask_func_list
+ - ask_name
+ - give_name
+ - chuc_nang
+ - xac_nhan
+ - cach_thuc_tap
+ - doi_thuc_tap
+ - giay_thuc_tap
+ - buoi_thuc_tap
+ - chuanbi
+ - duocgi
+ 
+
+entities:
+ - cust_sex
+ - cust_name
+
+slots:
+ cust_sex:
+  auto_fill: true
+  type: text
+ cust_name:
+  auto_fill: true
+  type: text
+
+
+responses:
+  utter_greet:
+  - text: "Kính chào Quý khách! Quý khách vui lòng cho biết tên để tiện xưng hô được không ah?"
+  utter_greet_with_name:
+  - text: "Kính chào {cust_sex} {cust_name}. Minh có thể giúp gì được {cust_sex} {cust_name} ạ?"
+  utter_bye:
+  - text: "Kính chào tạm biệt và mong sớm gặp lại quý khách !"
+  - text: "Kính chào tạm biệt và chúc quý khách một ngày tốt lành!"
+  utter_thank:
+  - text: "Cảm ơn quý khách quá khen ah!"
+  - text: "Dạ không có gì, đó là trách nhiệm của em mà!"
+  utter_func_list:
+  - text: "Tôi có thể hỗ trợ cho bạn về thông tin sinh viên quốc tế"
+  utter_ask_name:
+  - text: "tôi lên Bot!  Quý khách cần trợ giúp gì ạ?"
+  - text: "Dạ thưa. Tên Tiếng Việt của em là Trợ lý ảo nhưng em thích gọi bằng tên Tiếng Anh là Bot cho nó Tây!"
+  utter_unclear:
+  - text: "Thưa quý khách, hiện tại tôi chưa hiểu được yêu cầu của Quý khách. "
+  utter_chuc_nang:
+  - text: "Đầu tiên, tôi cần biết bạn học ngành gì ?"
+  utter_xac_nhan:
+  - text: "Luôn khuyến khích sinh viên tự liên hệ để tìm nơi thực tập, vì các lý do: -Hoàn toàn chủ động trong việc tìm kiếm nơi TT phù hợp cho bản thân
+    - Việc tự tìm nơi TT là một bước chuẩn bị cho việc tìm việc làm sau này của sinh viên.
+    - Tôi xin giới thiệu cho bạn một số công ty phần mềm để bạn có thể tham khảo: TMA Solutions, FPT Software, Fujinet "
+  utter_cach_thuc_tap:
+  - text: "Xin lỗi bạn! Hiện tại tôi chỉ chuyên về ngành CNTT, còn ngành của bạn tôi chưa có nhiều thông tin để giúp đỡ cho bạn! "
+  utter_doi_thuc_tap:
+  - text: "Trong quá trình thực tập, nếu có bất kỳ sự thay đổi nào, SV đều phải báo với Khoa.
+Sau khi nhận được thông tin từ SV, Khoa sẽ trao đổi với SV và DN đang thực tập của SV để tìm hiểu và xem xét lý do thay đổi đơn vị thực tập.Nếu Khoa xét thấy lý do là hợp lý, sẽ hướng dẫn cho SV viết Đơn đề nghị thay đổi đơn vị thực tập"  
+  utter_giay_thuc_tap:
+  - text: "SV liên hệ Khoa chuyên ngành để nhận hồ sơ thực tập và giấy giới thiệu! "
+  utter_buoi_thuc_tap:
+  - text: "sinh viên phải thực tập đủ 12 tuần theo lịch làm việc của DN"
+  utter_chuan_bi:
+  - text: "Tập trung học những kiến thức nền, di sâu vào một ngôn ngữ và 1 hướng: nên chọn theo một hướng học như web, app, addroid hay AI,ML, khi bạn đã cảm thấy đủ kiến thức nền để đi thực tập thì bạn có thể tìm hiều các công ty tuyển thực tập, có thể lên các trang mạng, hoặc qua bạn bè anh chị đi trước" 
+  utter_duoc_gi:
+  - text: "- Được trải nghiệm, kinh nghiệm làm việc thực tế, Được học và làm việc với các công nghệ mới, kiến thức mới, Học được cách giải quyết và chịu áp lực, Học hỏi nhiều hơn từ những người đi trước"
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

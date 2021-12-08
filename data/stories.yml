@@ -1,0 +1,83 @@
+version: "2.0"
+
+stories:
+
+- story: Chào hỏi đưa tên
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: give_name
+  - action: utter_greet_with_name
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: bye
+  - action: utter_bye
+
+- story: Đưa tên luôn
+  steps: 
+  - intent: give_name
+  - action: utter_greet_with_name
+
+- story: Chào - tên - hỏi chức năng - chào
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: ask_func_list
+  - action: utter_func_list
+  - intent: bye
+  - action: utter_bye
+  
+- story: Chào  - hỏi chức năng - chào
+  steps: 
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_func_list
+  - action: utter_func_list
+  - intent: bye
+  - action: utter_bye
+  
+- story: Chào  - hỏi tên - chào
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: bye
+  - action: utter_bye
+
+- story: Hỏi tên - hỏi chức năng
+  steps:
+  - intent: ask_name
+  - action: utter_ask_name
+  - intent: ask_func_list
+  - action: utter_func_list
+  
+- story: chuc nang
+  steps:
+  - intent: chuc_nang
+  - action: utter_chuc_nang
+  - intent: xac_nhan
+  - action: utter_xac_nhan
+
+- story: hoi_dap
+  steps:
+  - intent: cach_thuc_tap
+  - action: utter_cach_thuc_tap
+  - intent: doi_thuc_tap
+  - action: utter_doi_thuc_tap
+  - intent: giay_thuc_tap
+  - action: utter_giay_thuc_tap
+  - intent: buoi_thuc_tap
+  - action: utter_buoi_thuc_tap
+  - intent: chuanbi
+  - action: utter_chuan_bi
+  - intent: duocgi
+  - action: utter_duoc_gi
+  
+
+- story: Cảm ơn
+  steps:
+  - intent: thank
+  - action: utter_thank
